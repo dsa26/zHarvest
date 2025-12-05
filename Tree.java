@@ -29,7 +29,7 @@ public class Tree {
             return new Node(word, 1, null, null);
         }
 
-        if (node.word == word) {
+        if (node.word.equals(word)) {
             node.count++;
             return node;
         } else if (before(node.word, word)) {
@@ -51,5 +51,18 @@ public class Tree {
         }
 
         return first.length() < second.length(); // I want smaller words to be "before"
+    }
+
+    public void display() {
+        display(ROOT);
+    }
+
+    public void display(Node node) { // Hopefully alphabetically sorted traversal
+        if (node == null) {
+            return;
+        }
+        display(node.left);
+        System.out.println("Word: " + node.word + ", Count: " + node.count);
+        display(node.right);
     }
 }
