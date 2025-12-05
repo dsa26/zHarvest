@@ -28,7 +28,6 @@ public class Tree {
         if (node == null) {
             return new Node(word, 1, null, null);
         }
-
         if (node.word.equals(word)) {
             node.count++;
             return node;
@@ -64,5 +63,18 @@ public class Tree {
         display(node.left);
         System.out.println("Word: " + node.word + ", Count: " + node.count);
         display(node.right);
+    }
+
+    public void reverseDisplay() {
+        reverseDisplay(ROOT);
+    }
+
+    public void reverseDisplay(Node node) { // Hopefully alphabetically sorted traversal
+        if (node == null) {
+            return;
+        }
+        reverseDisplay(node.right);
+        System.out.println("Word: " + node.word + ", Count: " + node.count);
+        reverseDisplay(node.left);
     }
 }

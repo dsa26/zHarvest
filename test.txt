@@ -1,0 +1,6 @@
+Hi there! This is a testing passage. I am typing some words to check the frequency of different words.
+
+This is a new line!
+This is another line.
+
+Bye bye!
