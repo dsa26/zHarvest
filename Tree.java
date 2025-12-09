@@ -43,7 +43,7 @@ public class Tree {
     private boolean before(String first, String second) {
         for (int i = 0; i < Math.min(first.length(), second.length()); i++) {
             if (first.charAt(i) > second.charAt(i)) {
-                return false; // Being greater in ASCII means being before in lexographic order
+                return false; // Being greater in ASCII means being before in lexicographic order
             } else if (first.charAt(i) < second.charAt(i)) {
                 return true;
             }

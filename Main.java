@@ -2,14 +2,14 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
-        Stats.run(readFile("./test.txt"));
-        String text = readFile("./test.txt");
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            System.out.println(
-                    "Character at index " + i + ": '" + c + "' (Unicode: U+" +
-                            String.format("%04X", (int) c) + ")");
-        }
+        Stats.run(readFile("./p&p.txt"));
+        // String text = readFile("./test.txt");
+        // for (int i = 0; i < text.length(); i++) {
+        // char c = text.charAt(i);
+        // System.out.println(
+        // "Character at index " + i + ": '" + c + "' (Unicode: U+" +
+        // String.format("%04X", (int) c) + ")");
+        // }
         // for (String s : "a s d s
         // dd".toLowerCase().replaceAll("(\r|\n|\\?|\'|\"|!|,|-|\\.)", "").replaceAll("
         // ", " ")
