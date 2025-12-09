@@ -12,7 +12,7 @@ public class Stats {
                          // doesn't get
                          // converted to "
                          // "
-        Tree analysis = new Tree();
+        WTree analysis = new WTree();
         String[] words = text.split(" ");
         for (String word : words) {
             analysis.increment(word);
