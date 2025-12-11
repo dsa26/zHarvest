@@ -31,7 +31,18 @@ public abstract class Tree<K, V, N extends Node<K, V, N>> {
         reverseDisplay(node.left);
     }
 
-    public abstract V get(K key);
+    protected boolean before(String first, String second) {
+        for (int i = 0; i < Math.min(first.length(), second.length()); i++) {
+            if (first.charAt(i) > second.charAt(i)) {
+                return false; // Being greater in ASCII means being before in lexicographic order
+            } else if (first.charAt(i) < second.charAt(i)) {
+                return true;
+            }
+        }
 
-    public abstract void increment(K key);
+        return first.length() < second.length(); // I want smaller keys to be "before"
+    }
+
+    // Decided to get rid of abstract methods because I wanted to customize
+    // parameters and return types for each tree
 }

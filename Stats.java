@@ -1,5 +1,8 @@
 public class Stats {
-    public static void run(String text) {
+    private WTree analysis;
+    private PTree prediction;
+
+    public Stats(String text) {
         text = text.toLowerCase()
                 .replaceAll("--", " ") // Special formatting of Pride & Prejudice
                 .replaceAll("(?![a-z]| ).", "")
@@ -13,10 +16,20 @@ public class Stats {
                          // converted to "
                          // "
         WTree analysis = new WTree();
+        PTree prediction = new PTree();
         String[] words = text.split(" ");
-        for (String word : words) {
-            analysis.increment(word);
+        for (int i = 0; i < words.length; i++) {
+            analysis.increment(words[i]);
+            if (i != words.length - 1) {
+                prediction.increment(words[i], words[i + 1]);
+            }
         }
-        analysis.reverseDisplay();
+        this.analysis = analysis;
+        this.prediction = prediction;
+    }
+
+    public void predict(String start) {
+        prediction.predict(start);
+        // prediction.get(start).value.display();
     }
 }
