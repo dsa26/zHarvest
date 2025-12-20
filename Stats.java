@@ -32,4 +32,11 @@ public class Stats {
         prediction.predict(start);
         // prediction.get(start).value.display();
     }
+
+    public void verifyLL() {
+        WDoubleLL linkedList = new WDoubleLL(analysis);
+        linkedList.display();
+        // Works with a small test file, but StackOverflow with Jane Austen texts --
+        // Assuming that's a size issue and considering the problem solved!
+    }
 }
