@@ -29,7 +29,8 @@ public class Stats {
     }
 
     public void predict(String start) {
-        prediction.predict(start);
+        // prediction.predict(start);
+        prediction.predictRandom(start);
         // prediction.get(start).value.display();
     }
 

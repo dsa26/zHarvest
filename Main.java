@@ -2,14 +2,15 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
-        Stats stats = new Stats(readFile("./test.txt")
-        // readFile("./p&p.txt")
-        // + readFile("./s&s.txt")
+        Stats stats = new Stats(
+                // readFile("./test.txt")
+                // readFile("./p&p.txt") +
+                readFile("./s&s.txt")
         // + readFile("persuasion.txt")
         // + readFile("emma.txt") + readFile("na.txt")
         );
-        // stats.predict(args[0]);
-        stats.verifyLL();
+        stats.predict(args[0]);
+        // stats.verifyLL();
     }
 
     private static String readFile(String filePath) {
